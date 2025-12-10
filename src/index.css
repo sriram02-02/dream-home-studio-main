@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Warm, elegant interior design palette */
+    --background: 40 33% 98%;
+    --foreground: 30 10% 15%;
+
+    --card: 40 30% 96%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 40 33% 98%;
+    --popover-foreground: 30 10% 15%;
+
+    /* Warm charcoal primary */
+    --primary: 30 10% 20%;
+    --primary-foreground: 40 33% 98%;
+
+    /* Soft cream secondary */
+    --secondary: 38 35% 92%;
+    --secondary-foreground: 30 10% 20%;
+
+    /* Muted warm tones */
+    --muted: 35 20% 90%;
+    --muted-foreground: 30 10% 45%;
+
+    /* Terracotta accent */
+    --accent: 18 60% 55%;
+    --accent-foreground: 40 33% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 18 60% 55%;
+
+    --radius: 0.5rem;
+
+    /* Custom design tokens */
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+    
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(40 33% 98%) 0%, hsl(38 35% 92%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(30 10% 15% / 0.4) 0%, hsl(30 10% 15% / 0.7) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(30 10% 15% / 0.08);
+    --shadow-elevated: 0 12px 40px -12px hsl(30 10% 15% / 0.15);
+    --shadow-glow: 0 0 40px hsl(18 60% 55% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 30 10% 8%;
+    --foreground: 40 20% 95%;
+
+    --card: 30 10% 12%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 30 10% 8%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 40 20% 95%;
+    --primary-foreground: 30 10% 8%;
+
+    --secondary: 30 10% 18%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 30 10% 18%;
+    --muted-foreground: 35 15% 60%;
+
+    --accent: 18 60% 55%;
+    --accent-foreground: 40 33% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 10% 20%;
+    --input: 30 10% 20%;
+    --ring: 18 60% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--muted-foreground)) 100%);
+  }
+
+  .section-padding {
+    @apply px-6 py-20 md:px-12 lg:px-24 lg:py-32;
+  }
+
+  .container-narrow {
+    @apply max-w-6xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .image-reveal {
+    @apply overflow-hidden;
+  }
+
+  .image-reveal img {
+    @apply transition-transform duration-700 ease-out;
+  }
+
+  .image-reveal:hover img {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
