@@ -52,10 +52,20 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="flex flex-col gap-3 sm:gap-4 justify-center w-full sm:w-auto"
           >
-            <Button variant="hero" size="xl" className="w-full sm:w-auto" asChild>
+            <Button
+              variant="hero"
+              size="xl"
+              className="w-full sm:w-auto md:h-11 md:px-8 md:text-sm md:tracking-wide"
+              asChild
+            >
               <a href="#portfolio">Explore Our Work</a>
             </Button>
-            <Button variant="hero-outline" size="xl" asChild className="w-full sm:w-auto">
+            <Button
+              variant="hero-outline"
+              size="xl"
+              asChild
+              className="w-full sm:w-auto md:h-11 md:px-8 md:text-sm md:tracking-wide"
+            >
               <a href="#contact">Get In Touch</a>
             </Button>
           </motion.div>
