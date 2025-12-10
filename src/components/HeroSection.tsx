@@ -17,23 +17,23 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative h-full flex flex-col justify-center items-center text-center px-6">
+      <div className="relative h-full flex flex-col justify-center items-center text-center px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-4xl"
+          className="max-w-4xl w-full"
         >
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-primary-foreground/80 tracking-[0.3em] uppercase text-xs md:text-sm mb-6"
+            className="text-primary-foreground/80 tracking-[0.2em] uppercase text-xs sm:text-xs md:text-sm mb-4 sm:mb-6"
           >
             Your Vision, Our Craft, Perfectly Aligned
           </motion.p>
           
-          <h1 className="font-cinzel text-4xl md:text-6xl lg:text-7xl text-primary-foreground font-medium leading-tight mb-6">
+          <h1 className="font-cinzel text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-primary-foreground font-medium leading-tight mb-4 sm:mb-6">
             Sai Rakesh Interiors
           </h1>
           
@@ -41,7 +41,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed"
+            className="text-primary-foreground/80 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 font-light leading-relaxed"
           >
             Transforming Spaces Into Stories
           </motion.p>
@@ -50,12 +50,12 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col gap-3 sm:gap-4 justify-center w-full sm:w-auto"
           >
-            <Button variant="hero" size="xl">
+            <Button variant="hero" size="xl" className="w-full sm:w-auto">
               Explore Our Work
             </Button>
-            <Button variant="hero-outline" size="xl" asChild>
+            <Button variant="hero-outline" size="xl" asChild className="w-full sm:w-auto">
               <a href="#contact">Get In Touch</a>
             </Button>
           </motion.div>

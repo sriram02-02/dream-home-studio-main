@@ -41,18 +41,18 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
         isScrolled || !isHomePage
-          ? "bg-background/95 backdrop-blur-md shadow-sm py-4"
-          : "bg-transparent py-6"
+          ? "bg-background/95 backdrop-blur-md shadow-sm py-3 sm:py-4"
+          : "bg-transparent py-4 sm:py-6"
       }`}
     >
-      <div className="container-narrow mx-auto px-6 md:px-12">
+      <div className="container-narrow mx-auto px-4 sm:px-6 md:px-12">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img 
               src={logo} 
               alt="Sai Rakesh Interiors"
-              className={`h-14 w-auto transition-all duration-300 ${
+              className={`h-10 sm:h-12 md:h-14 w-auto transition-all duration-300 ${
                 isScrolled || !isHomePage ? "" : "brightness-0 invert"
               }`}
             />
