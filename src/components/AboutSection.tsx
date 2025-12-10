@@ -47,11 +47,11 @@ const AboutSection = () => {
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-serif text-lg text-foreground">Sai Rakesh</h4>
+                  <h4 className="font-serif text-lg text-foreground">Palavasa Rakesh</h4>
                   <p className="text-sm text-muted-foreground">Founder & CEO</p>
                 </div>
                 <div>
-                  <h4 className="font-serif text-lg text-foreground">Saikumar Jammu</h4>
+                  <h4 className="font-serif text-lg text-foreground">Jammu Saikumar</h4>
                   <p className="text-sm text-muted-foreground">Creative Director & Interior Designer</p>
                 </div>
               </div>
